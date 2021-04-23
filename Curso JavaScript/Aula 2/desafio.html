@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Questão 1 e 2 -->
+    <button class="Square" onclick="generateSquare()"> Generate red square</button>
+
+    <!-- Questão 4-->
+    <input type="text" name="nome" id="input">
+    <button class="btn" onClick="adicionar()">Adicionar</button>
+
+    <!-- Início do JavaScript-->
+    <script>
+        //Questão 1 - Criar o quadrado vermelho ao clicar
+        function generateSquare() {
+            let redSquarebox = document.createElement('div');
+            redSquarebox.style.width = '100px';
+            redSquarebox.style.height = '100px';
+            redSquarebox.style.backgroundColor = '#f00';
+            //Questão 2 - Mudar a cor do quadrado vermelho ao passar o mouse
+            redSquarebox.addEventListener("mouseover", () => {
+                redSquarebox.style.backgroundColor = color();
+            });
+            document.body.appendChild(redSquarebox);
+        }
+        // Function de alterar a cor de forma aleatória
+        function color() {
+            let letters = "0123456789ABCDEF";
+            let color = "#";
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        //Questão 3
+        let names = ["Diego", "Gabriel", "Lucas"];
+        let list = document.createElement('ul');
+        for (let i = 0; i < names.length; i++) {
+            let item = document.createElement('li');
+            item.appendChild(document.createTextNode(names[i]));
+            list.appendChild(item);
+        }
+        document.body.appendChild(list);
+
+        //Questão 4
+        function adicionar() {
+            let inputValue = document.querySelector('input[name = nome]');
+            let newLi = document.createElement('li');
+            newLi.appendChild(document.createTextNode(inputValue.value));
+            list.appendChild(newLi);
+            document.getElementById('input').value = '';
+        }
+
+    </script>
+</body>
+
+</html>

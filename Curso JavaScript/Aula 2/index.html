@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Criando as divs para manipular com JS-->
+    <div class="app">
+        <button onclick="mostraAlerta()">Me pressione</button>
+    </div>
+    <div id="app2">
+        <button onmouseover="mostraAlerta()">Passe o mousee</button>
+    </div>
+    <div id="app3">
+        <input onkeypress="mostraAlerta()">Digite</input>
+    </div>
+
+    <div id="aula2">
+        <input type="text" name="nome" id="nome" />
+        <button class="botao">Adicionar</button>
+    </div>
+
+    <div id="InserindoComJavaScript">
+        <input id="nomes" />
+    </div>
+
+    <div id="apx">
+        <div class="box"></div>
+    </div>
+
+    <script>
+        // Manipulando/Buscando o HTML
+        function mostraAlerta() {
+            alert('Botão foi clicado');
+        }
+
+        let inputElement = document.getElementById('nome');
+        let inputElement2 = document.getElementsByTagName('input')[0];
+        let inputElement3 = document.getElementsByClassName('app');
+        let inputElement4 = document.querySelector('div#app2 button');
+        let inputElement5 = document.querySelector('input[name = nome]');
+        let inputElement6 = document.querySelector('button.botao');
+
+        inputElement6.onclick = function () {
+            let text = inputElement5.value;
+            alert(text);
+        }
+
+        // Inserindo HTML com JavaScript
+
+        let linkElement = document.createElement('a');
+        linkElement.setAttribute('href', 'https://www.google.com.br');
+        linkElement.setAttribute('title', 'Site do Google');
+        var textElement = document.createTextNode('Acessar Google');
+        linkElement.appendChild(textElement);
+        let containerElement = document.querySelector("#InserindoComJavaScript");
+        containerElement.appendChild(linkElement);
+
+        // Apagando HTML com JavaScript
+
+        let inputElement7 = document.querySelector("#nomes");
+        containerElement.removeChild(inputElement7);
+
+
+        //Chamdas das funções acima
+        console.log(inputElement);
+        console.log(inputElement2);
+        console.log(inputElement3);
+        console.log(inputElement4);
+        console.log(inputElement5);
+
+        //Estilizando com JavaScript
+        let boxElement = document.querySelector('.box');
+        boxElement.style.width = '100px';
+        boxElement.style.height = '100px';
+        boxElement.style.backgroundColor = '#f00';
+
+    </script>
+</body>
+
+</html>

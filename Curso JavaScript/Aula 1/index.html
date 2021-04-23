@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 1 JS</title>
+</head>
+
+<body>
+
+    <script>
+        let nome = 'Felipe';
+        let idade = 28;
+        let peso = 73.5;
+        let humano = true;
+        let alunos = ['João', 'Maria', 'José'];
+
+        let aluno = {
+            nome: 'José',
+            idade: 42,
+            peso: 79.6,
+            humano: true
+        };
+
+        console.log(aluno);
+
+        function soma(number1, number2) {
+            let resultado = number1 + number2;
+            return resultado;
+        }
+
+        let sexo = 'M';
+        let retorno = (sexo === 'M') ? 'Maculino' : 'Feminino'; 
+
+        console.log(retorno);
+        console.log(soma(1,2));
+
+        function msg() {
+            console.log('Hello World');
+        }
+
+        setInterval(msg, 1000); //executa tal função a cada X ms
+        setTimeout(msg, 5000) //exibe tal função depois de X ms
+        
+    </script>
+</body>
+
+</html>

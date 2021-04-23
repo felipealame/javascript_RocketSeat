@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let endereco = {
+            rua: "Rua dos pinheiros",
+            numero: 1293,
+            bairro: "Centro",
+            cidade: "São Paulo",
+            uf: "SP"
+
+        };
+
+        function endereco1(endereco) {
+            return `O usuário mora em ${endereco.cidade} / ${endereco.uf}, no bairro ${endereco.bairro}, na rua "${endereco.rua}" com nº ${endereco.numero} `;
+        }
+
+        function pares(a, b) {
+            for (a; a <= b; a++) {
+                if (a % 2 === 0)
+                    console.log(a);
+            }
+        }
+
+        let skills = [
+            "Javascript",
+            "React",
+            "Node"
+        ];
+
+        function skill(skills) {
+            for (const iterator of skills) {
+                if (iterator === "Javascript")
+                    return true;
+            }
+        }
+
+        let anosEstudo = 2;
+
+        function experi(anosEstudo) {
+
+            if (anosEstudo >= 0 && anosEstudo <= 1)
+                console.log("Iniciante");
+            else if (anosEstudo > 1 && anosEstudo <= 3)
+                console.log("Intermediário");
+            else if (anosEstudo > 3 && anosEstudo <= 6)
+                console.log("Avançado");
+            else if (anosEstudo >= 7)
+                console.log("Jedi");
+            else
+                console.log("Valor inválido")
+
+        }
+
+        var usuarios = [
+            {
+                nome: "Diego",
+                habilidades: ["Javascript", "ReactJS", "Redux"]
+            },
+            {
+                nome: "Gabriel",
+                habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+            }
+        ];
+        
+        function escreve(usuarios) {
+
+            for (const iterator of usuarios) {
+                console.log(`O ${iterator.nome} possui as habilidades: ${iterator.habilidades.join(", ")}.`);
+            }
+        }
+
+        console.log(endereco1(endereco));
+        pares(1, 10);
+        console.log(skill(skills));
+        experi(anosEstudo);
+        escreve(usuarios);
+
+    </script>
+</body>
+
+</html>
